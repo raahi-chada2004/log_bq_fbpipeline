@@ -1,2 +1,1 @@
-# log_bq_fbpipeline
-End-to-end FluentBit Pipeline written in GoLang with the sink BigQuery.
+This repository establishes an end-to-end fluent bit pipeline where the source is a continously-updated log file (where log entries are being appended each second) and the sink is a table in bigquery. The fluent bit out_bigquery plugin must be installed before running this. The command go run source.go will start appending log entries to the logfile. Then running fluent-bit -c expipeline.conf will begin sending data to bigquery through the insert_all function. Make sure to add the appropriate paths and IDs in the config file. The source is a continously-updating 
